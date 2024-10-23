@@ -1,0 +1,43 @@
+{
+    "name": "Totally Chill",
+    "manifest_version": 3,
+    "version": "1.0",
+    "description": "Rappels de self-care",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "notifications",
+        "tabs",
+        "alarms"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "menu.html",
+        "default_icon": "/icons/icon16.png"
+    },
+    "icons":
+    {
+        "16": "icon16.png"    
+    }
+
+}

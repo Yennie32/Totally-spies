@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <img src="icon16.PNG" />
+        <div class="grid-container">
+            <div class="item" id="BE">Good vibes</div>
+            <div class="item">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="goodVibe" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="item" id="CN">Chuck Norris</div>
+            <div class="item">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="chuckNorris" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="item" id="RP">Reminder</div>
+            <div class="item">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="reminder" />
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="parametres">
+            <div class="rappel">Set up :</div>
+
+            <form id="reminderForm">
+                <input
+                    type="text"
+                    name="name"
+                    id="reminderMessage"
+                    required
+                    minlength="5"
+                    maxlength="50"
+                    size="20"
+                    placeholder="Write your reminder 😊"
+                />
+
+                <input type="time" id="reminderTime" name="time" required />
+
+                <button id="ok" type="submit">Save</button>
+            </form>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

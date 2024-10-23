@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+$backgroundColor: rgb(227, 176, 255);
+$borderColor: #ff53b1;
+
+body {
+    height: fit-content;
+    background-color: $backgroundColor;
+    width: 20rem;
+    display: grid;
+    padding: 10px 0px 10px 10px;
+    font-family: Rethink Sans;
+    font-size: 17px;
+    border: 10px solid $borderColor;
+    border-radius: 10px;
+    border-style: ridge;
+    img {
+        max-width: 50%;
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+}
+
+.grid-container {
+    display: grid;
+    margin-top: 5px;
+    grid-template-columns: repeat(3, 1fr); /* 2 colonnes */
+    gap: 5px;
+    align-items: center;
+
+    #BE,
+    #CN,
+    #RP {
+        grid-column: 1 / span 2;
+        background-color: darken($color: $backgroundColor, $amount: 10);
+        text-align: left;
+    }
+
+    .item {
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 75px;
+        height: 34px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: darken($backgroundColor, $amount: 20);
+            border-radius: 34px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                background-color: white;
+                height: 26px;
+                width: 26px;
+                border-radius: 50%;
+                left: 4px;
+                bottom: 4px;
+                transition: 0.4s;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: darken($backgroundColor, $amount: 40);
+
+            &::before {
+                transform: translateX(41px);
+            }
+        }
+    }
+}
+
+.rappel {
+    grid-column: 1 / -1; /*prendre toute la largeur*/
+    padding: 10px;
+    text-align: center;
+}
+#reminderForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 5px;
+    align-items: center;
+    margin-top: 5px;
+    padding: 0px 10px 0px 0px;
+}
+
+@mixin style {
+    appearance: none;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid darken($color: $backgroundColor, $amount: 30);
+    background: darken($color: $backgroundColor, $amount: 5);
+    border-radius: 0.2em 0.2em 0 0;
+    padding: 0.4em;
+    color: darken($color: $backgroundColor, $amount: 50);
+}
+
+#reminderMessage {
+    @include style;
+    grid-column: 1 / -1; /* Prendre toute la largeur */
+}
+
+#reminderTime {
+    @include style;
+    grid-column: 1 / -1; /* Prendre toute la largeur */
+}
+
+button {
+    grid-column: 1 / -1; /* Prendre toute la largeur */
+    border-radius: 5px;
+    margin: 10px;
+    background-color: darken($color: $backgroundColor, $amount: 30);
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        background-color: darken($color: $backgroundColor, $amount: 20);
+    }
+}
+
+
+/* div contenant les phrases */
+#newDiv {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $backgroundColor;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 10000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-family: Rethink Sans;
+}
