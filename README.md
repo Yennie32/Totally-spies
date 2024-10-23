@@ -2,7 +2,7 @@
 
 Projet collectif n°3 - Ada Tech School
 
-Création d'une extension de navigateur "Totally chill" avec @Muriciana et @Fiona-Rio
+Création d'une extension de navigateur "Totally chill" avec @Murciana et @Fiona-Rio
 
 Langages : HTML, CSS, JS
 
@@ -11,3 +11,5 @@ Objectifs :
 - Se familiariser avec la documentation d’un navigateur
 - Manipuler une API et l’utiliser pour créer son extension
 - Création d'une fonction de rappel programmé
+
+TO DO : 
