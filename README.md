@@ -1,4 +1,4 @@
-﻿# Totally-spies
+﻿# Totally chill
 
 Projet collectif n°3 - Ada Tech School
 
